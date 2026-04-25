@@ -1,0 +1,27 @@
+<div class="reveal" style="text-align:center">
+  <h2 class="section-title">Education</h2>
+  <div class="section-title-bar"></div>
+</div>
+
+<div class="timeline">
+  @for (item of items; track item.title; let i = $index) {
+    <div class="tl-item" [class.reveal-left]="i % 2 === 0" [class.reveal-right]="i % 2 !== 0">
+      <div class="tl-dot">
+        <div class="dot-inner"></div>
+        <div class="dot-pulse"></div>
+      </div>
+      <div class="tl-card glass-card">
+        <span class="tl-year">{{ item.year }}</span>
+        <h3 class="tl-title">{{ item.title }}</h3>
+        <p class="tl-place">{{ item.place }}</p>
+        @if (item.dept) {
+          <p class="tl-dept">{{ item.dept }}</p>
+        }
+        @if (item.detail) {
+          <p class="tl-detail">{{ item.detail }}</p>
+        }
+      </div>
+    </div>
+  }
+  <div class="tl-line"></div>
+</div>

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ng build:*)",
+      "Bash(ng serve:*)",
+      "Bash(cat dist/krishnaveny/browser/styles-*.css)",
+      "Bash(vercel --prod)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npx ng:*)",
+      "Bash(node:*)",
+      "Bash(curl -s http://localhost:4300)",
+      "Bash(vercel --version)",
+      "Bash(vercel --yes --prod)"
+    ]
+  }
+}

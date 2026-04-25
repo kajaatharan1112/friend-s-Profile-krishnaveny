@@ -1,0 +1,105 @@
+<div class="reveal" style="text-align:center">
+  <h2 class="section-title">Get In Touch</h2>
+  <div class="section-title-bar"></div>
+</div>
+
+<div class="contact-wrap">
+
+  <!-- Contact card -->
+  <div class="contact-card glass-card reveal-left">
+    <h3 class="contact-sub">Contact</h3>
+
+    <a class="contact-row" href="tel:+94779765663">
+      <span class="c-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.18 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
+        </svg>
+      </span>
+      <div class="c-text">
+        <span class="c-label">Phone</span>
+        <span class="c-value">+94 779 765 663</span>
+      </div>
+    </a>
+
+    <div class="contact-row" (click)="copyEmail()" style="cursor:pointer;position:relative">
+      <span class="c-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </span>
+      <div class="c-text">
+        <span class="c-label">Email</span>
+        <span class="c-value">krishnavenysenathirajah&#64;gmail.com</span>
+      </div>
+      <span class="copied-tip" [class.show]="copied">Copied!</span>
+    </div>
+
+    <div class="contact-row">
+      <span class="c-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </span>
+      <div class="c-text">
+        <span class="c-label">Location</span>
+        <span class="c-value">Alaveddy, Jaffna, Sri Lanka</span>
+      </div>
+    </div>
+
+    <a class="contact-row" href="https://www.linkedin.com/in/krishnavenysenathirajah" target="_blank" rel="noopener">
+      <span class="c-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </span>
+      <div class="c-text">
+        <span class="c-label">LinkedIn</span>
+        <span class="c-value">krishnavenysenathirajah</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- References -->
+  <div class="refs-wrap reveal-right">
+    <h3 class="contact-sub">References</h3>
+    <div class="refs-grid">
+      @for (ref of refs; track ref.name) {
+        <div class="ref-card glass-card">
+          <div class="ref-avatar">
+            {{ ref.name.split(' ').slice(0,2).map(w => w[0]).join('') }}
+          </div>
+          <h4 class="ref-name">{{ ref.name }}</h4>
+          <p class="ref-role">{{ ref.role }}</p>
+          <p class="ref-dept">{{ ref.dept }}</p>
+          <div class="ref-contacts">
+            <a [href]="'tel:' + ref.phone" class="ref-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.18 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
+              </svg>
+              {{ ref.phone }}
+            </a>
+            <a [href]="'mailto:' + ref.email" class="ref-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              {{ ref.email }}
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer reveal">
+  <p>Developed by Mahendran Kajaatharan</p>
+  <p>Contact: <a href="tel:+94763327319">+94 763 327 319</a></p>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text3);margin-top:6px">2026</p>
+</div>
